@@ -33,8 +33,9 @@ pipeline {
             steps{
                 script{
                 
-                    sh 'curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64'
-                    sh 'sudo install minikube-linux-amd64 /usr/local/bin/minikube'
+                    sh 'echo Thinkpad255@ | sudo -S curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube-linux-amd64'
+                    sh 'echo Thinkpad255@ | sudo -S install minikube-linux-amd64 /usr/local/bin/minikube'
+            
                 
                 //  Start Minikube (if not already running)
                     sh 'minikube start'
