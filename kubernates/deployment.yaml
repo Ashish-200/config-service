@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: config-service
+spec:
+  selector:
+    matchLabels:
+      app: config-service
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: config-service
+    spec:
+      containers: 
+        - name: config-service-container
+          image: docker-config
+          imagePullPolicy: IfNotPresent
+          ports:
+            - containerPort: 8083
