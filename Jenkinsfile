@@ -32,6 +32,12 @@ pipeline {
         {
             steps{
                 script{
+                //  Start Minikube (if not already running)
+                    sh 'minikube start'
+
+                 // Set the context to Minikube
+                    sh 'kubectl config use-context minikube'
+
                     sh 'kubectl apply -f deployment.yaml'
                     sh 'kubectl apply -f service.yaml'
                 }
