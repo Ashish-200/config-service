@@ -21,7 +21,7 @@ pipeline {
     steps{
         script{
             
-                sh 'docker login -u ashish131318/config -p Axelblaze255@'
+                sh 'docker login -u ashish131318 -p Axelblaze255@'
                 sh 'docker push ashish131318/config'
             
         }
