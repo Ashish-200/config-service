@@ -42,7 +42,7 @@ pipeline {
 
                  // Set the context to Minikube
                     sh 'kubectl config use-context minikube'
-
+                    sh 'pwd'
                     sh 'kubectl apply -f deployment.yaml'
                     sh 'kubectl apply -f service.yaml'
                 }
