@@ -39,7 +39,7 @@ pipeline {
                 //  Start Minikube (if not already running)
                     sh 'minikube delete'
                     sh 'minikube start'
-
+                    git 'https://github.com/Ashish-200/config-service.git'
                  // Set the context to Minikube
                     sh 'kubectl config use-context minikube'
                     sh 'pwd'
