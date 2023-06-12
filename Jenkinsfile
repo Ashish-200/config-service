@@ -37,6 +37,7 @@ pipeline {
                    // sh 'install minikube-linux-amd64 /usr/local/bin/minikube'
                 
                 //  Start Minikube (if not already running)
+                    sh 'minikube delete'
                     sh 'minikube start'
 
                  // Set the context to Minikube
