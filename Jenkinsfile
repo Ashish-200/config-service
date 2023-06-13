@@ -47,7 +47,7 @@ pipeline {
                     sh 'kubectl apply -f service.yaml'
                     sh 'kubectl get deployments'
                     sh 'kubectl get services'
-                 //   sh 'minikube dashboard'
+            
            
                 }
             }
