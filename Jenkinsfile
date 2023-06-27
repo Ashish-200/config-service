@@ -12,7 +12,7 @@ pipeline {
         {
             steps{
                 script{
-                    sh 'docker build -t ashish131318/config .'
+                    sh 'docker build -t new-config-image2 .'
                 }
             }
         }
@@ -21,8 +21,11 @@ pipeline {
     steps{
         script{
             
-                sh 'docker login -u ashish131318 -p Axelblaze255@'
-                sh 'docker push ashish131318/config'
+             //   sh 'docker login -u ashish131318 -p Axelblaze255@'
+             //   sh 'docker push ashish131318/config'
+		sh 'docker login -u ashish131318 -p Axelblaze255@'
+                sh 'docker tag new-config-image ashish131318/new-config-image2'
+                sh 'docker push ashish131318/new-config-image2'
             
         }
     }
@@ -39,7 +42,7 @@ pipeline {
                 //  Start Minikube (if not already running)
                     sh 'minikube delete'
                     sh 'minikube start'
-                    git 'https://github.com/Ashish-200/config-service.git'
+                 //   git 'https://github.com/Ashish-200/config-service.git'
                  // Set the context to Minikube.
                     sh 'kubectl config use-context minikube'
                     sh 'pwd'
