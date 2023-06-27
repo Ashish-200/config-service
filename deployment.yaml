@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: config
+  name: config2
 spec:
   selector:
     matchLabels:
-      app: config
+      app: config2
   replicas: 1
   template:
     metadata:
       labels:
-        app: config
+        app: config2
     spec:
       containers: 
         - name: config-service-container
-          image: config
+          image: ashish131318/new-config-image2
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 8083
